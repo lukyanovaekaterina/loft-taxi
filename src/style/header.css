@@ -1,0 +1,49 @@
+header {
+  background: #1C1A19;
+  width: 1440px;
+  height: 102px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__logo{
+  display: flex;
+  padding-left: 27px;
+}
+
+.logo__name{
+  padding-left: 14.47px;
+  font-family: UA_Blade_Runner;
+font-style: italic;
+font-weight: bold;
+font-size: 36px;
+line-height: 36px;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+}
+
+.nav__header{
+  padding-right: 27px;
+}
+
+.menu__item{
+  padding-left: 27px;
+}
+
+.menu__button{
+  background-color: transparent;
+  border: none;
+ color: #FFFFFF;
+ font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 21px;
+line-height: 25px;
+
+}
+
+.menu__button:hover{
+  color: #FDBF5A;
+}
