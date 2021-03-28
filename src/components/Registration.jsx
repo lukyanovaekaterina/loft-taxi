@@ -4,12 +4,12 @@ import logo from '../../src/logo1.svg';
 export const Registration = ({navigate}) => {
   return (
     <section className="RegisrationSection">
-      <aside className="Entry__left">
+      <aside className="left">
         <img src={logo} className="Loft__logo" alt="logo"/>
       </aside>
       <div className="reiht">
       
-      <form className="Form__entry">
+      <form className="Form__login">
       <p className="Form__name">Регистрация</p><br />
       <label htmlFor="email">Email<br />
       <input 
@@ -37,7 +37,7 @@ export const Registration = ({navigate}) => {
       </label><br />
       <button
       onClick = {() =>{
-        navigate("entry")
+        navigate("login")
       }}
        className="button__form">Зарегистрироваться</button><br />
       <span>Уже зарегистрировны?<button>Войти</button></span>

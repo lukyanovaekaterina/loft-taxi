@@ -8,3 +8,4 @@ describe("Profile", () => {
     expect(container.innerHTML).toMatch("Profile")
   })
 })
+
