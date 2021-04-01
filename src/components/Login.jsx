@@ -44,8 +44,9 @@ export class Login extends Component {
       </label><br />
       <span>Забыли пароль?</span><br />
       <button type="submit"
+         onClick = {() =>this.props.navigate("map")}
       className="button__form">Войти</button><br />
-      <span>Новый пользователь?<button>Регистрация</button></span>
+      <span>Новый пользователь?<button onClick={() => this.props.navigate("registration")}>Регистрация</button></span>
     </form>
     )}    
     </div>
