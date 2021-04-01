@@ -1,0 +1,51 @@
+.Booking__form{
+  position: absolute;
+  width: 486px;
+  height: 471px;
+  left: 68px;
+  top: 161px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.adress{
+  display: flex;
+  width: 90%;
+}
+
+.rate__form{
+  width: 486px;
+height: 323px;
+
+}
+
+.rate__form-container{
+padding: 32px 46px;
+}
+
+.rate__price-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.rate__price{
+width: 118px;
+right: 167 px;
+  background: #FFFFFF;
+box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+border-color: #FFFFFF;
+}
+
+.rate__foto{
+  width: 95px;
+  height: 73px;
+}
+
+.vector__btn{
+  background-color: #FFFFFF;
+  border: #FFFFFF;
+}

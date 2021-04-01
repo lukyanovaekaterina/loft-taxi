@@ -33,7 +33,7 @@ export const Header =({navigate}) => {
         <li className="menu__item">
           <button 
           onClick={() => {
-            navigate("entry")
+            navigate("login")
             }}
             className="menu__button"
           >
