@@ -1,6 +1,7 @@
 import React from 'react';
 import logo2 from '../assets/logo2.svg';
-
+import { Link } from "react-router-dom";
+ 
 export const Header =({navigate}) => {
   return (
     <header className="header">
@@ -11,44 +12,32 @@ export const Header =({navigate}) => {
     <nav className="nav__header">
       <ul className="menu__list">
         <li className="menu__item">
-          <button 
-          onClick={() => {
-            navigate("map")
-            }}
+          <Link to="/Map"
             className="menu__button"
           >
             Карта
-          </button>
+          </Link>
         </li>
         <li className="menu__item">
-          <button 
-          onClick={() => {
-            navigate("profile")
-            }}
+          <Link to="/Profile"
             className="menu__button"
           >
             Профиль
-          </button>
+          </Link>
         </li>
         <li className="menu__item">
-          <button 
-          onClick={() => {
-            navigate("login")
-            }}
+          <Link to="/Registration"
             className="menu__button"
           >
             Выйти
-          </button>
+          </Link>
         </li>
         <li className="menu__item">
-          <button 
-          onClick={() => {
-            navigate("registration")
-            }}
+          <Link to="/"
             className="menu__button"
           >
             Войти
-          </button>
+          </Link>
         </li>
       </ul>
     </nav>
