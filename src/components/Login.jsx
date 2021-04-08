@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import logo from '../../src/logo1.svg';
-import {PropTypes} from 'prop-types'
-import { withAuth } from "./AuthContext";
+import { authenticate } from "../actions";
+import {PropTypes} from 'prop-types';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 export class Login extends Component {
-  goToProfile = (event) => {
-    event.preventDefault();
-    this.props.navigate("profile");
-  };
-
   authenticate = (event) => {
     event.preventDefault();
     const {email, password} = event.target;
-    this.props.logIn(email.value, password.value);
+    this.props.authenticate(email.value, password.value);
   };
 
   render () {
@@ -27,26 +24,25 @@ export class Login extends Component {
       {this.props.isLoggedIn ? (
       <p>
         You are logged in{" "}
-            <button onClick={this.goToProfile}>
+            <Link to="/profile">
               go to profile
-            </button>
+            </Link>
       </p>
     ):(
       <form onSubmit={this.authenticate} className="Form__login">
-      <p className="Form__name">Войти</p><br />
-      <label htmlFor="email">Email<br />
+      <p className="Form__name">Войти</p>
+      <label htmlFor="email" className="form__label">Email
       <input id="email" type="email" placeholder="mail@gmail.ru" name="email"
       className="form__input" />
-      </label><br />
-      <label htmlFor="password">Пароль<br />
+      </label>
+      <label htmlFor="password" className="form__label">Пароль
       <input id="password" type="password" placeholder="*************" name="password"
       className="form__input" />
-      </label><br />
-      <span>Забыли пароль?</span><br />
-      <button type="submit"
-         onClick = {() =>this.props.navigate("map")}
-      className="button__form">Войти</button><br />
-      <span>Новый пользователь?<button onClick={() => this.props.navigate("registration")}>Регистрация</button></span>
+      </label>
+      <span>Забыли пароль?</span>
+      <button onClick={this.unauthenticate}
+      className="button__form">Войти</button>
+      <span>Новый пользователь?<Link to="/registration">Регистрация</Link></span>
     </form>
     )}    
     </div>
@@ -60,7 +56,10 @@ export class Login extends Component {
 Login.propTypes = {
   isLoggedIn: PropTypes.bool,
   logIn: PropTypes.func,
-  navigate: PropTypes.func,
+
 };
 
-export const LoginWithAuth = withAuth(Login);
+export const LoginWithConnect = connect(
+  (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
+  { authenticate }
+)(Login);

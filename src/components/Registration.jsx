@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../src/logo1.svg';
+import {Link} from "react-router-dom";
 
 export const Registration = ({navigate}) => {
   return (
@@ -35,11 +36,8 @@ export const Registration = ({navigate}) => {
       name="password"
       className="form__input" />
       </label><br />
-      <button
-      onClick = {() =>{
-        navigate("login")
-      }}
-       className="button__form">Зарегистрироваться</button><br />
+      <Link to="/login"
+       className="button__form">Зарегистрироваться</Link><br />
       <span>Уже зарегистрировны?<button>Войти</button></span>
     </form>
     </div>

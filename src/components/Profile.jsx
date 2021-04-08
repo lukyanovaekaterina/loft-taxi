@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import logo2 from '../../src/assets/logo2.svg';
-import { withAuth } from "./AuthContext";
+import {connect} from "react-redux";
+import {logOut} from "../actions";
 
 
 export class Profile extends Component {
   unauthenticate = (event) => {
     event.preventDefault();
     this.props.logOut();
-    this.props.navigate("login");
   };
 
  render() {
@@ -70,4 +70,7 @@ export class Profile extends Component {
   );
 } 
 }
-export const ProfileWithAuth = withAuth(Profile);
+export default connect(
+  null,
+  { logOut }
+)(Profile);
