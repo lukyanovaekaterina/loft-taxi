@@ -19,7 +19,7 @@ export const Header =({navigate}) => {
           </Link>
         </li>
         <li className="menu__item">
-          <Link to="/Profile"
+          <Link to="/profile"
             className="menu__button"
           >
             Профиль

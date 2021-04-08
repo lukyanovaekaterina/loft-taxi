@@ -30,18 +30,18 @@ export class Login extends Component {
       </p>
     ):(
       <form onSubmit={this.authenticate} className="Form__login">
-      <p className="Form__name">Войти</p><br />
-      <label htmlFor="email">Email<br />
+      <p className="Form__name">Войти</p>
+      <label htmlFor="email" className="form__label">Email
       <input id="email" type="email" placeholder="mail@gmail.ru" name="email"
       className="form__input" />
-      </label><br />
-      <label htmlFor="password">Пароль<br />
+      </label>
+      <label htmlFor="password" className="form__label">Пароль
       <input id="password" type="password" placeholder="*************" name="password"
       className="form__input" />
-      </label><br />
-      <span>Забыли пароль?</span><br />
-      <Link to="/map"
-      className="button__form">Войти</Link><br />
+      </label>
+      <span>Забыли пароль?</span>
+      <button onClick={this.unauthenticate}
+      className="button__form">Войти</button>
       <span>Новый пользователь?<Link to="/registration">Регистрация</Link></span>
     </form>
     )}    

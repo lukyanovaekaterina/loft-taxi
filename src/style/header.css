@@ -47,3 +47,9 @@ line-height: 25px;
 .menu__button:hover{
   color: #FDBF5A;
 }
+
+.form__label{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}

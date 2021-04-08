@@ -70,7 +70,7 @@ export class Profile extends Component {
   );
 } 
 }
-export const ProfileWithConnect = connect(
+export default connect(
   null,
   { logOut }
 )(Profile);
