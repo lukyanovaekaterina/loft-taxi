@@ -18,7 +18,7 @@ export const LoginForm = () => {
       <p className="Form__name">Войти</p>
       <label htmlFor="email" className="form__label">
         Email
-        <input register={register}
+        <input {...register('email')}
           id="email"
           type="email"
           placeholder="mail@gmail.ru"
@@ -28,7 +28,7 @@ export const LoginForm = () => {
       </label>
       <label htmlFor="password" className="form__label">
         Пароль
-        <input register={register}
+        <input {...register('password')}
           id="password"
           type="password"
           placeholder="*************"
