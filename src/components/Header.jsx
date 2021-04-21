@@ -2,7 +2,7 @@ import React from 'react';
 import logo2 from '../assets/logo2.svg';
 import { Link } from "react-router-dom";
  
-export const Header =({navigate}) => {
+export const Header =() => {
   return (
     <header className="header">
       <div className="Header__logo">
@@ -43,4 +43,4 @@ export const Header =({navigate}) => {
     </nav>
   </header>
   );
-};
+  };
