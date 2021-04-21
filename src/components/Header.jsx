@@ -26,14 +26,14 @@ export const Header =({navigate}) => {
           </Link>
         </li>
         <li className="menu__item">
-          <Link to="/Registration"
+          <Link to="/"
             className="menu__button"
           >
             Выйти
           </Link>
         </li>
         <li className="menu__item">
-          <Link to="/"
+          <Link to="/Registration"
             className="menu__button"
           >
             Войти

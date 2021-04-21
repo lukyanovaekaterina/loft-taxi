@@ -24,8 +24,8 @@ export class Login extends Component {
       {this.props.isLoggedIn ? (
       <p>
         You are logged in{" "}
-            <Link to="/profile">
-              go to profile
+            <Link to="/map">
+              go to map
             </Link>
       </p>
     ):(
