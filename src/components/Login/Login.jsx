@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from '../../logo1.svg';
 import {PropTypes} from 'prop-types';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import {LoginForm} from './LoginForm';
 
 
@@ -17,12 +17,7 @@ export class Login extends Component {
       </aside>
       <div className="reiht">
       {this.props.isLoggedIn ? (
-      <p>
-        You are logged in{" "}
-            <Link to="/map">
-              go to map
-            </Link>
-      </p>
+       <Redirect to='/map'/>
     ):(
       <LoginForm />
     )}    

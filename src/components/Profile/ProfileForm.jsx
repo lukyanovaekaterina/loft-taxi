@@ -9,8 +9,8 @@ export const ProfileForm = () => {
   const {register, handleSubmit} = useForm()
 
   const onSubmit = (data) => {
-    const {name, number, expiryDate, cvc } = data;
-    dispatch(authenticate(name, number, expiryDate, cvc ))
+    const {name, cardNumber, expiryDate, cvc } = data;
+    dispatch(authenticate(name, cardNumber, expiryDate, cvc ))
   }
 
   return (
@@ -27,12 +27,12 @@ export const ProfileForm = () => {
           name="name"
           className="form__input form__input-card"/>
         </label>
-        <label htmlFor="number">Номер карты<br />
-          <input {...register('number')}
-          id="number"
-          type="number" 
+        <label htmlFor="cardNumber">Номер карты<br />
+          <input {...register('cardNumber')}
+          id="cardNumber"
+          type="cardNumber" 
           placeholder="5545  2300  3432  4521" 
-          name="number"
+          name="cardNumber"
           className="form__input form__input-card" />
         </label>
         <div className="card__form-2">

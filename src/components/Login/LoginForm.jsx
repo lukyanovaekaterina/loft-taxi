@@ -10,7 +10,8 @@ export const LoginForm = () => {
 
   const onSubmit = (data) => {
     const {email, password} = data;
-    dispatch(authenticate(email, password))
+    dispatch(authenticate(email, password));
+
   }
 
   return (
@@ -36,7 +37,7 @@ export const LoginForm = () => {
           className="form__input"
         />
       </label>
-      <span>Забыли пароль?</span>
+      <a href="/" className="text">Забыли пароль?</a>
       <button type="submit" className="button__form">
         Войти
       </button>
