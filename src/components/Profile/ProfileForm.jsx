@@ -1,20 +1,21 @@
 import React from "react";
 import {useForm} from 'react-hook-form';
 import { useDispatch } from "react-redux";
-import { authenticate } from "../../actions";
+import { saveCard } from "../../actions";
 import logo2 from '../../assets/logo2.svg';
 
 export const ProfileForm = () => {
   const dispatch = useDispatch()
   const {register, handleSubmit} = useForm()
 
-  const onSubmit = (data) => {
-    const {name, cardNumber, expiryDate, cvc } = data;
-    dispatch(authenticate(name, cardNumber, expiryDate, cvc ))
+  const setProfileInfo = (data) => {
+    const {CardName, cardNumber, expiryDate, cvc} = data;
+
+    dispatch(saveCard(CardName, cardNumber, expiryDate, cvc));
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="Profile__form">
+    <form onSubmit={handleSubmit(setProfileInfo)} className="Profile__form">
         <h2 className="Form__name">Профиль</h2>
         <h5 className="Profile__name-text">Введите платежные данные</h5>
         <div className="Profile__form-center">     

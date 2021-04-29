@@ -2,7 +2,7 @@ import React from "react";
 import { Map } from "./components/Map";
 import { Profile } from "./components/Profile";
 import { LoginWithConnect } from "./components/Login/Login";
-import { Registration } from "./components/Registration";
+import { Registration } from "./components/Registration/Registration";
 import { Header } from "./components/Header";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -22,7 +22,7 @@ class App extends React.Component {
                 <Route exact path="/" component={LoginWithConnect} />
                 <PrivateRoute path="/map" component={Map} />
                 <PrivateRoute path="/profile" component={Profile} />
-                <PrivateRoute path="/registration" component={Registration} />
+                <Route exact path="/registration" component={Registration} />
               </Switch>
             </section>
           </main>

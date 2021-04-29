@@ -16,7 +16,9 @@ export class Profile extends Component {
   );
 } 
 }
-export default connect(
+
+
+export default Profile = connect(
   null,
   { logOut }
 )(Profile);

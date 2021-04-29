@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { authenticate } from "../../actions";
+import { registration } from "../../actions";
 import { Link, Redirect } from "react-router-dom";
 
 export const RegistrationForm = () => {
@@ -10,7 +10,7 @@ export const RegistrationForm = () => {
 
   const onSubmit = (data) => {
     const { email, name, password } = data;
-    dispatch(authenticate(email, name, password));
+    dispatch(registration(email, name, password));
   };
 
   return (
@@ -21,7 +21,7 @@ export const RegistrationForm = () => {
         Email
         <br />
         <input
-          {...register("email")}
+          {...register("email", {required:true})}
           id="email"
           type="email"
           placeholder="mail@gmail.ru"
@@ -33,7 +33,7 @@ export const RegistrationForm = () => {
         Как вас зовут?
         <br />
         <input
-          {...register("name")}
+          {...register("name", {required:true})}
           id="name"
           type="text"
           placeholder="Петр Александрович"
@@ -46,7 +46,7 @@ export const RegistrationForm = () => {
         Придумайте пароль!
         <br />
         <input
-          {...register("password")}
+          {...register("password", {required:true})}
           id="password"
           type="password"
           placeholder="*************"
@@ -55,12 +55,12 @@ export const RegistrationForm = () => {
         />
       </label>
       <br />
-      <Link to="/" className="button__form">
+      <button type="submit" className="button__form">
         Зарегистрироваться
-      </Link>
+      </button>
       <br />
       <span>
-        Уже зарегистрировны?<button type="submit" to="/" >Войти</button>
+        Уже зарегистрировны?<Link  to="/" >Войти</Link>
       </span>
     </form>
   );

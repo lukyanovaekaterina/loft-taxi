@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { authenticate } from "../actions";
+import {getAddressList} from "../actions"
 import auto1 from "../assets/auto1.png";
 import auto2 from "../assets/auto2.png";
 import auto3 from "../assets/auto3.png";
@@ -11,15 +11,13 @@ import vector2 from "../assets/Vector2.svg";
 import vector3 from "../assets/Vector3.svg";
 
 export const BookingForm = () => {
-  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
+  const onSubmit = () => {
+    }
 
-  const onSubmit = (data) => {
-    const { email, password } = data;
-    dispatch(authenticate(email, password));
-  };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="Booking__form">
+    <form className="Booking__form" onSubmit={handleSubmit(onSubmit)} >
+
       <label htmlFor="adress1" className="adress">
         <br />
         <img className="elipse" src={elipse} alt="elipse" />
@@ -54,6 +52,7 @@ export const BookingForm = () => {
           <img className="vector3" src={vector3} alt="check" />
         </button>
       </label>
+
       <div className="rate__form">
         <div className="rate__form-container">
           <div className="rate__price-container">

@@ -26,13 +26,6 @@ export const Header =() => {
           </Link>
         </li>
         <li className="menu__item">
-          <Link to="/"
-            className="menu__button"
-          >
-            Выйти
-          </Link>
-        </li>
-        <li className="menu__item">
           <Link to="/Registration"
             className="menu__button"
           >
