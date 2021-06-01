@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl'
-import {Booking} from './Booking'
+import {BookingForm} from './BookingForm'
+import {getAddressList} from "../actions";
+
 
 export class Map extends Component {
   map = null;
@@ -25,8 +27,9 @@ export class Map extends Component {
     return (
         <div className="map-wrapper">
           <div data-testid="map" className="map" ref={this.mapContainer} />
-         <div><Booking /></div>
+          <BookingForm />
         </div> 
     );
   }
 }
+

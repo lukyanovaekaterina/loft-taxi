@@ -2,19 +2,19 @@ import { authenticateSaga } from "./authSaga";
 import { authenticate } from "../actions";
 import { recordSaga } from "./recordSaga";
 
-jest.mock("./api.js", () => ({ serverLogIn: jest.fn(() => true) }));
+jest.mock("../api.js", () => ({ serverLogIn: jest.fn(() => true) }));
 
 describe("authSaga", () => {
   describe("#AUTHENTICATE", () => {
     it("authenticates through api", async () => {
       const dispatched = await recordSaga(
         authenticateSaga,
-        authenticate("testlogin", "testpassword")
+        authenticate("testemail", "testpassword")
       );
       expect(dispatched).toEqual([
-        {
-          type: "LOG_IN",
-        },
+      {
+        type: "LOG_IN",        
+      }
       ]);
     });
   });
